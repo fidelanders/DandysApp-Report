@@ -32,17 +32,19 @@ newman.run({
 }, function (err, summary) {
     if (err) {
         console.error("🚨 Newman encountered an error:", err);
+        process.exit(1); // Ensure process exits with error
+        return;
     }
-    
-    console.log("✅ Newman run completed successfully!");
 
-    // Log failed tests but do not exit immediately
+    console.log("✅ Newman run completed!");
+
     if (summary.run.failures.length > 0) {
-        console.error(`⚠️ Some tests failed (${summary.run.failures.length} failures). Check the report for details.`);
+        console.error(`⚠️ ${summary.run.failures.length} test(s) failed. Check the report.`);
+        process.exit(1);
     } else {
         console.log("🎉 All tests passed successfully!");
+        process.exit(0);
     }
-    
-    // Always exit normally so all tests run
-    process.exit(0);
-});
+}
+
+);

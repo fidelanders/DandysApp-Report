@@ -5654,10 +5654,6 @@
 						},
 						"url": {
 							"raw": "{{host}}/v1/verifications/drivers-license",
-<<<<<<< HEAD
-							"protocol": "http",
-=======
->>>>>>> 2f64704847d49fe6b2dd43e62565d7d573e3e799
 							"host": [
 								"{{host}}"
 							],
