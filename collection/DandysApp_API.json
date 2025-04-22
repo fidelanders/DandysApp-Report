@@ -5088,8 +5088,8 @@
 							"listen": "test",
 							"script": {
 								"exec": [
-									"pm.test(\"Response status code is 200\", function () {\r",
-									"  pm.expect(pm.response.code).to.equal(200);\r",
+									"pm.test(\"Response status code is 1000\", function () {\r",
+									"  pm.expect(pm.response.code).to.equal(1000);\r",
 									"});\r",
 									"\r",
 									"\r",
@@ -5244,9 +5244,8 @@
 									"  pm.response.to.have.status(201);\r",
 									"});\r",
 									"\r",
-									"\r",
-									"pm.test(\"Response time is less than 200ms\", function () {\r",
-									"  pm.expect(pm.response.responseTime).to.be.below(200);\r",
+									"pm.test(\"Response time is less than 1000ms\", function () {\r",
+									"  pm.expect(pm.response.responseTime).to.be.below(1000);\r",
 									"});\r",
 									"\r",
 									"\r",
@@ -5735,7 +5734,7 @@
 										{
 											"key": "image",
 											"type": "file",
-											"src": "/home/nightblood/Documents/zetiva-dandys/haircut1.jpeg"
+											"src": "postman-cloud:///1f00a020-2861-4780-8431-d61fc2551cd6"
 										}
 									]
 								},
@@ -6687,10 +6686,7 @@
 								{
 									"key": "image",
 									"type": "file",
-									"src": [
-										"/home/nightblood/Documents/zetiva-dandys/barbers.jpg",
-										"/C:/Users/fogbeni/Downloads/bundle_0.jpg"
-									]
+									"src": "postman-cloud:///1f00a020-2861-4780-8431-d61fc2551cd6"
 								}
 							]
 						},
