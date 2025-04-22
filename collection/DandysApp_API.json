@@ -5635,10 +5635,10 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:3500/v1/verifications/drivers-license",
+							"raw": "{{host}}/v1/verifications/drivers-license",
 							"protocol": "http",
 							"host": [
-								"localhost"
+								"{{host}}"
 							],
 							"port": "3500",
 							"path": [
