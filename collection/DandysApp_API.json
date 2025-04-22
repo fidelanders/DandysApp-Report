@@ -6334,6 +6334,30 @@
 								"type": "text/javascript",
 								"packages": {}
 							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									"// Step 1: List of sample grooming services\r",
+									"const groomingServices = [\r",
+									"    \"Beard Trim\", \"Hair Wash\", \"Facial\", \"Hair Styling\",\r",
+									"    \"Hot Towel Shave\", \"Manicure\", \"Pedicure\", \"Scalp Massage\"\r",
+									"];\r",
+									"\r",
+									"// Step 2: Pick a random service\r",
+									"const randomService = groomingServices[Math.floor(Math.random() * groomingServices.length)];\r",
+									"\r",
+									"// Step 4: Set it as an environment or global variable\r",
+									"pm.environment.set(\"grooming_subcategory\", randomService);\r",
+									"\r",
+									"// Optional log for debugging\r",
+									"console.log(\"🔧 Generated grooming subcategory:\", randomService);\r",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
 						}
 					],
 					"request": {
@@ -6350,7 +6374,7 @@
 							"formdata": [
 								{
 									"key": "name",
-									"value": "Grooming servicess",
+									"value": "Grooming services",
 									"type": "text"
 								},
 								{
@@ -6385,12 +6409,12 @@
 								},
 								{
 									"key": "subCategories",
-									"value": "{\"name\":\"Hair fixes\"}",
+									"value": "{{grooming_subcategory}}",
 									"type": "text"
 								},
 								{
 									"key": "subCategories",
-									"value": "{\"name\": \"new styles",
+									"value": "{{grooming_subcategory}}",
 									"type": "text"
 								}
 							]
@@ -6429,7 +6453,6 @@
 									"    pm.expect(responseBody.data).to.be.an('array');\r",
 									"    pm.expect(responseBody.data.length).to.be.above(0); // Assuming the array should not be empty\r",
 									"});\r",
-									"pm.environment.set(\"categoryId\", pm.response.json().data[1]._id)\r",
 									"pm.environment.set(\"categoryId\", pm.response.json().data[1]._id)"
 								],
 								"type": "text/javascript",
