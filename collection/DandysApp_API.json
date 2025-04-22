@@ -4,7 +4,7 @@
 		"name": "DandysApp_API",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
 		"_exporter_id": "39229288",
-		"_collection_link": "https://crimson-meteor-266011.postman.co/workspace/DandysApp~d99cd77e-3fb4-415e-8601-3a2b421a234e/collection/39229288-cc3cd894-fe2f-4452-976e-bc136f86a9e3?action=share&source=collection_link&creator=39229288"
+		"_collection_link": "https://crimson-meteor-266011.postman.co/workspace/d99cd77e-3fb4-415e-8601-3a2b421a234e/collection/39229288-cc3cd894-fe2f-4452-976e-bc136f86a9e3?action=share&source=collection_link&creator=39229288"
 	},
 	"item": [
 		{
@@ -187,9 +187,12 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "{{host}}/v1/admin/bookings",
+									"raw": "https://dev.dandysapp.com/v1/admin/bookings",
+									"protocol": "https",
 									"host": [
-										"{{host}}"
+										"dev",
+										"dandysapp",
+										"com"
 									],
 									"path": [
 										"v1",
@@ -412,9 +415,12 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "{{host}}/v1/admin/users",
+									"raw": "https://dev.dandysapp.com/v1/admin/users",
+									"protocol": "https",
 									"host": [
-										"{{host}}"
+										"dev",
+										"dandysapp",
+										"com"
 									],
 									"path": [
 										"v1",
@@ -613,9 +619,12 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "{{host}}/v1/admin/professionals?page=1&size=5",
+									"raw": "https://dev.dandysapp.com/v1/admin/professionals?page=1&size=5",
+									"protocol": "https",
 									"host": [
-										"{{host}}"
+										"dev",
+										"dandysapp",
+										"com"
 									],
 									"path": [
 										"v1",
@@ -769,9 +778,12 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "{{host}}/v1/admin/transactions",
+									"raw": "https://dev.dandysapp.com/v1/admin/transactions",
+									"protocol": "https",
 									"host": [
-										"{{host}}"
+										"dev",
+										"dandysapp",
+										"com"
 									],
 									"path": [
 										"v1",
@@ -1131,9 +1143,12 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "{{host}}/v1/admin/dashboard?trendingServices=monthly&income=weekly",
+									"raw": "https://dev.dandysapp.com/v1/admin/dashboard?trendingServices=monthly&income=weekly",
+									"protocol": "https",
 									"host": [
-										"{{host}}"
+										"dev",
+										"dandysapp",
+										"com"
 									],
 									"path": [
 										"v1",
@@ -1293,9 +1308,12 @@
 									}
 								},
 								"url": {
-									"raw": "{{host}}/v1/admin/app-version",
+									"raw": "https://dev.dandysapp.com/v1/admin/app-version",
+									"protocol": "https",
 									"host": [
-										"{{host}}"
+										"dev",
+										"dandysapp",
+										"com"
 									],
 									"path": [
 										"v1",
@@ -4115,7 +4133,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"name\": \"Professional Hair Services\",\n    \"categoryId\": \"65434b3d25331259e3c9aadc\",\n    \"subCategoryId\":\"65436ac0afbbff9d6eb48a38\",\n    \"minPrice\": 5000,\n    \"maxPrice\": 50000,\n    \"homeServiceCost\": 500,\n    \"status\": true,\n    \"notes\": \"We are proud of our clients\",\n    \"professionalId\": \"{{profID}}\",\n    \"serviceImageGallery\":[\n        {\n            \"path\": \"services/671f93be18eae52f004edd31/barberShop.webp\",\n            \"url\": \"https://storage.googleapis.com/dandys-7de81.appspot.com/services%2F671f93be18eae52f004edd31%2FbarberShop.webp\"\n        },\n        {\n            \"path\": \"services/671f93be18eae52f004edd31/andersplace.jpg\",\n            \"url\": \"https://storage.googleapis.com/dandys-7de81.appspot.com/services%2F671f93be18eae52f004edd31%2Fandersplace.jpg\"\n        }\n    ],\n    \"time\":{\n        \"from\": \"10:00am\",\n        \"to\": \"5:00pm\",\n        \"interval\": \"1\"\n    }\n}",
+							"raw": "{\n    \"name\": \"Massage\",\n    \"categoryId\": \"6543694dafbbff9d6eb48a28\",\n    \"subCategoryId\":\"65434b1625331259e3c9aad9\",\n    \"minPrice\": 5000,\n    \"maxPrice\": 50000,\n    \"homeServiceCost\": 500,\n    \"status\": true,\n    \"notes\": \"We are proud of our clients\",\n    \"professionalId\": \"{{profID}}\",\n    \"serviceImageGallery\":[\n        {\n            \"path\": \"services/671f93be18eae52f004edd31/barberShop.webp\",\n            \"url\": \"https://storage.googleapis.com/dandys-7de81.appspot.com/services%2F671f93be18eae52f004edd31%2FbarberShop.webp\"\n        },\n        {\n            \"path\": \"services/671f93be18eae52f004edd31/andersplace.jpg\",\n            \"url\": \"https://storage.googleapis.com/dandys-7de81.appspot.com/services%2F671f93be18eae52f004edd31%2Fandersplace.jpg\"\n        }\n    ],\n    \"time\":{\n        \"from\": \"10:00am\",\n        \"to\": \"5:00pm\",\n        \"interval\": \"1\"\n    }\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -5635,12 +5653,10 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:3500/v1/verifications/drivers-license",
-							"protocol": "http",
+							"raw": "{{host}}/v1/verifications/drivers-license",
 							"host": [
-								"localhost"
+								"{{host}}"
 							],
-							"port": "3500",
 							"path": [
 								"v1",
 								"verifications",
@@ -6179,6 +6195,52 @@
 						},
 						{
 							"name": "Get All SubCategories",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"// Test for status code\r",
+											"pm.test(\"Status code is 200\", function () {\r",
+											"    pm.response.to.have.status(200);\r",
+											"});\r",
+											"\r",
+											"// Test for response time\r",
+											"pm.test(\"Response time is less than 500ms\", function () {\r",
+											"    pm.expect(pm.response.responseTime).to.be.below(500);\r",
+											"});\r",
+											"\r",
+											"// Test for response body schema and properties\r",
+											"pm.test(\"Response contains expected properties\", function () {\r",
+											"    const jsonData = pm.response.json();\r",
+											"    pm.expect(jsonData).to.have.property(\"statusCode\");\r",
+											"    pm.expect(jsonData).to.have.property(\"message\");\r",
+											"    pm.expect(jsonData).to.have.property(\"data\");\r",
+											"\r",
+											"    // Loop through each data element and assert properties\r",
+											"    jsonData.data.forEach((item) => {\r",
+											"        pm.expect(item).to.have.property(\"_id\");\r",
+											"        pm.expect(item).to.have.property(\"name\");\r",
+											"        pm.expect(item).to.have.property(\"parentCategoryId\");\r",
+											"        pm.expect(item).to.have.property(\"status\");\r",
+											"        pm.expect(item).to.have.property(\"coverImage\");\r",
+											"        pm.expect(item).to.have.property(\"coverImagePath\");\r",
+											"        pm.expect(item).to.have.property(\"createdAt\");\r",
+											"        pm.expect(item).to.have.property(\"updatedAt\");\r",
+											"        pm.expect(item).to.have.property(\"__v\");\r",
+											"    });\r",
+											"});\r",
+											"\r",
+											"pm.collectionVariables.set(\"subCategory_ID\", pm.response.json().data[0]._id)\r",
+											"pm.collectionVariables.set(\"category_ID\", pm.response.json().data[0].parentCategoryId)\r",
+											"\r",
+											""
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
 							"request": {
 								"method": "GET",
 								"header": [],
@@ -6368,7 +6430,8 @@
 									"    pm.expect(responseBody.data).to.be.an('array');\r",
 									"    pm.expect(responseBody.data.length).to.be.above(0); // Assuming the array should not be empty\r",
 									"});\r",
-									"pm.environment.set(\"categoryId\", pm.response.json().data[0]._id)"
+									"pm.environment.set(\"categoryId\", pm.response.json().data[1]._id)\r",
+									"pm.environment.set(\"categoryId\", pm.response.json().data[1]._id)"
 								],
 								"type": "text/javascript",
 								"packages": {}
@@ -7406,7 +7469,12 @@
 									"    pm.expect(pm.response.responseTime).to.be.below(1000);\r",
 									"});\r",
 									"\r",
-									"pm.collectionVariables.set(\"bookingId\", pm.response.json().data._id);"
+									"pm.collectionVariables.set(\"bookingId\", pm.response.json().data._id);\r",
+									"pm.collectionVariables.set(\"bookingTimeId\", pm.response.json().data.bookingTimeId);\r",
+									"\r",
+									"\r",
+									"\r",
+									""
 								],
 								"type": "text/javascript",
 								"packages": {}
@@ -8255,7 +8323,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"bookingId\": \"670a2551fcea4fa95e6e7e34\",\r\n    \"bookingTimeId\": \"67c1f814e2ae3b7dd448fc71\",\r\n    \"newDate\": \"2025-03-08\",\r\n    \"newTime\": \"10am\"\r\n}",
+							"raw": "{\r\n    \"bookingId\": \"{{bookingId}}\",\r\n    \"bookingTimeId\": \"{{bookingTimeId}}\",\r\n    \"newDate\": \"2025-04-25\",\r\n    \"newTime\": \"10am\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -8948,6 +9016,18 @@
 		},
 		{
 			"key": "bookingId",
+			"value": ""
+		},
+		{
+			"key": "subCategory_ID",
+			"value": ""
+		},
+		{
+			"key": "category_ID",
+			"value": ""
+		},
+		{
+			"key": "bookingTimeId",
 			"value": ""
 		}
 	]
