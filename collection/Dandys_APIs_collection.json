@@ -1,10 +1,10 @@
 {
 	"info": {
-		"_postman_id": "2c73c852-5b86-48aa-b57e-7fe16d83a182",
-		"name": "Dandys",
+		"_postman_id": "2b7ac0a9-7494-417b-b35c-8133ac952d58",
+		"name": "Dandys-Update",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
 		"_exporter_id": "16533226",
-		"_collection_link": "https://fidelanders.postman.co/workspace/Dandys-API~80136c10-93f3-405d-af51-4d0458093628/collection/16533226-2c73c852-5b86-48aa-b57e-7fe16d83a182?action=share&source=collection_link&creator=16533226"
+		"_collection_link": "https://fidelanders.postman.co/workspace/Dandys-API~80136c10-93f3-405d-af51-4d0458093628/collection/16533226-2b7ac0a9-7494-417b-b35c-8133ac952d58?action=share&source=collection_link&creator=16533226"
 	},
 	"item": [
 		{
@@ -3026,7 +3026,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"firstname\": \"Farouq\",\n    \"lastname\": \"Doh\",\n    \"email\": \"testingplus@dcpa.net\",\n    \"password\": \"Parse@12345\",\n    \"phone\": \"2349112848624\",\n    \"gender\": \"MALE\"\n}",
+							"raw": "{\n    \"firstname\": \"Ken\",\n    \"lastname\": \"Doh\",\n    \"email\": \"pmkonnect@dcpa.net\",\n    \"password\": \"Parse@12345\",\n    \"phone\": \"2349112848624\",\n    \"gender\": \"MALE\"\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -3048,6 +3048,150 @@
 						"description": "gender: Gender could either be MALE or FEMALE"
 					},
 					"response": []
+				},
+				{
+					"name": "Verify OTP",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Response status code is 201\", function () {\r",
+									"  pm.response.to.have.status(201);\r",
+									"});\r",
+									"\r",
+									"\r",
+									"pm.test(\"Response time is less than 1000ms\", function () {\r",
+									"  pm.expect(pm.response.responseTime).to.be.below(1000);\r",
+									"});\r",
+									"\r",
+									"\r",
+									"pm.test(\"Response has the required fields - statusCode, message, and data\", function () {\r",
+									"    const responseData = pm.response.json();\r",
+									"    \r",
+									"    pm.expect(responseData).to.be.an('object');\r",
+									"    pm.expect(responseData).to.have.property('statusCode');\r",
+									"    pm.expect(responseData).to.have.property('message');\r",
+									"    pm.expect(responseData).to.have.property('data');\r",
+									"});\r",
+									"\r",
+									"\r",
+									"pm.test(\"StatusCode is a non-negative integer\", function () {\r",
+									"    const responseData = pm.response.json();\r",
+									"    \r",
+									"    pm.expect(responseData).to.be.an('object');\r",
+									"    pm.expect(responseData.statusCode).to.be.a('number');\r",
+									"    pm.expect(responseData.statusCode).to.satisfy((statusCode) => statusCode >= 0, \"StatusCode should be a non-negative integer\");\r",
+									"});\r",
+									"\r",
+									"\r",
+									"pm.test(\"Message is a non-empty string\", function () {\r",
+									"    const responseData = pm.response.json();\r",
+									"    \r",
+									"    pm.expect(responseData.message).to.be.a('string').and.to.have.lengthOf.at.least(1, \"Message should not be empty\");\r",
+									"});\r",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"code\": 869975,\n    \"trxId\": \"72f12b6083585852adad44e8abd98e8a\",\n    \"channel\": \"sms\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/v1/auth/otp/verify",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"v1",
+								"auth",
+								"otp",
+								"verify"
+							]
+						},
+						"description": "`trxId: use trxId for validating OTP via sms or whatsApp channel`"
+					},
+					"response": [
+						{
+							"name": "Verify OTP",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"code\": 444531\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/v1/auth/otp/verify",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"v1",
+										"auth",
+										"otp",
+										"verify"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "50"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"32-VkkyaDEUIj/xl4tYiJEPY3JK6rM\""
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 08 Dec 2023 10:13:40 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"statusCode\": 201,\n    \"message\": \"success\",\n    \"data\": true\n}"
+						}
+					]
 				},
 				{
 					"name": "Login",
@@ -3103,7 +3247,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"email\": \"testingplus@dcpa.net\",\n    \"password\": \"Parse@12345\"\n}",
+							"raw": "{\n    \"email\": \"pmkonnect@dcpa.net\",\n    \"password\": \"Parse@12345\"\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -4399,6 +4543,223 @@
 							],
 							"cookie": [],
 							"body": "{\n    \"statusCode\": 201,\n    \"message\": \"logged in\",\n    \"data\": {\n        \"_id\": \"65369ba62a79e06254edbb0e\",\n        \"email\": \"johndoe@gmail.com\",\n        \"firstname\": \"John\",\n        \"lastname\": \"Doe\",\n        \"isActive\": \"PENDING\",\n        \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1MzY5YmE2MmE3OWUwNjI1NGVkYmIxMCIsImlhdCI6MTY5ODA3NzcwMSwiZXhwIjoxNjk4NjgyNTAxfQ.ZTeTxpqWOl1nq2DKpqnoPobcSS5MNQfN8uyDRu49Aq8\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Generate OTP",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Response status code is 201\", function () {\r",
+									"  pm.expect(pm.response.to.have.status(201));\r",
+									"});\r",
+									"\r",
+									"\r",
+									"pm.test(\"Response time is less than 1000ms\", function () {\r",
+									"  pm.expect(pm.response.responseTime).to.be.below(1000);\r",
+									"});\r",
+									"\r",
+									"\r",
+									"pm.test(\"Response has the required fields - statusCode, message, and data\", function () {\r",
+									"  const responseData = pm.response.json();\r",
+									"  \r",
+									"  pm.expect(responseData).to.be.an('object');\r",
+									"  pm.expect(responseData.statusCode).to.exist;\r",
+									"  pm.expect(responseData.message).to.exist;\r",
+									"  pm.expect(responseData.data).to.exist;\r",
+									"});\r",
+									"\r",
+									"\r",
+									"pm.test(\"StatusCode is a non-negative integer\", function () {\r",
+									"    const responseData = pm.response.json();\r",
+									"    \r",
+									"    pm.expect(responseData.statusCode).to.be.a('number').and.to.be.at.least(0);\r",
+									"});\r",
+									"\r",
+									"\r",
+									"pm.test(\"Message is a non-empty string\", function () {\r",
+									"    const responseData = pm.response.json();\r",
+									"    \r",
+									"    pm.expect(responseData.message).to.be.a('string').and.to.have.lengthOf.at.least(1, \"Message should not be empty\");\r",
+									"});\r",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"fidelanders@gmail.com\",\n    \"phone\": \"2348109642088\",\n    \"channel\": \"sms\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/v1/auth/otp/generate",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"v1",
+								"auth",
+								"otp",
+								"generate"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Verify OTP",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Response status code is 201\", function () {\r",
+									"  pm.response.to.have.status(201);\r",
+									"});\r",
+									"\r",
+									"\r",
+									"pm.test(\"Response time is less than 1000ms\", function () {\r",
+									"  pm.expect(pm.response.responseTime).to.be.below(1000);\r",
+									"});\r",
+									"\r",
+									"\r",
+									"pm.test(\"Response has the required fields - statusCode, message, and data\", function () {\r",
+									"    const responseData = pm.response.json();\r",
+									"    \r",
+									"    pm.expect(responseData).to.be.an('object');\r",
+									"    pm.expect(responseData).to.have.property('statusCode');\r",
+									"    pm.expect(responseData).to.have.property('message');\r",
+									"    pm.expect(responseData).to.have.property('data');\r",
+									"});\r",
+									"\r",
+									"\r",
+									"pm.test(\"StatusCode is a non-negative integer\", function () {\r",
+									"    const responseData = pm.response.json();\r",
+									"    \r",
+									"    pm.expect(responseData).to.be.an('object');\r",
+									"    pm.expect(responseData.statusCode).to.be.a('number');\r",
+									"    pm.expect(responseData.statusCode).to.satisfy((statusCode) => statusCode >= 0, \"StatusCode should be a non-negative integer\");\r",
+									"});\r",
+									"\r",
+									"\r",
+									"pm.test(\"Message is a non-empty string\", function () {\r",
+									"    const responseData = pm.response.json();\r",
+									"    \r",
+									"    pm.expect(responseData.message).to.be.a('string').and.to.have.lengthOf.at.least(1, \"Message should not be empty\");\r",
+									"});\r",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"code\": 378463,\n    \"trxId\": \"72f12b6083585852adad44e8abd98e8a\",\n    \"channel\": \"sms\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/v1/auth/otp/verify",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"v1",
+								"auth",
+								"otp",
+								"verify"
+							]
+						},
+						"description": "`trxId: use trxId for validating OTP via sms or whatsApp channel`"
+					},
+					"response": [
+						{
+							"name": "Verify OTP",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"code\": 444531\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/v1/auth/otp/verify",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"v1",
+										"auth",
+										"otp",
+										"verify"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "50"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"32-VkkyaDEUIj/xl4tYiJEPY3JK6rM\""
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 08 Dec 2023 10:13:40 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"statusCode\": 201,\n    \"message\": \"success\",\n    \"data\": true\n}"
 						}
 					]
 				},
@@ -7797,6 +8158,96 @@
 								"v1",
 								"verifications",
 								"account-number"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "NiN Verification",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Response status code is 201\", function () {\r",
+									"    pm.expect(pm.response.code).to.equal(201);\r",
+									"});\r",
+									"\r",
+									"\r",
+									"pm.test(\"Response has the required fields - status, nin, firstname, lastname, dob, phone, email, and gender\", function () {\r",
+									"    const responseData = pm.response.json();\r",
+									"    \r",
+									"    pm.expect(responseData).to.be.an('object');\r",
+									"    pm.expect(responseData.data).to.have.property('status');\r",
+									"    pm.expect(responseData.data).to.have.property('nin');\r",
+									"    pm.expect(responseData.data).to.have.property('firstname');\r",
+									"    pm.expect(responseData.data).to.have.property('lastname');\r",
+									"    pm.expect(responseData.data).to.have.property('dob');\r",
+									"    pm.expect(responseData.data).to.have.property('phone');\r",
+									"    pm.expect(responseData.data).to.have.property('email');\r",
+									"    pm.expect(responseData.data).to.have.property('gender');\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Response time is less than 1000ms\", function () {\r",
+									"  pm.expect(pm.response.responseTime).to.be.below(1000);\r",
+									"});\r",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"number\": \"77280892822\",\n    \"firstname\": \"Fidelis\",\n    \"lastname\": \"Ogbeni\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/v1/verifications/nin",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"v1",
+								"verifications",
+								"nin"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Drivers License",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"number\": \"KEY12956AA91\",\n    \"firstname\": \"Salami\",\n    \"lastname\": \"Oyekunle\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/v1/verifications/drivers-license",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"v1",
+								"verifications",
+								"drivers-license"
 							]
 						}
 					},
