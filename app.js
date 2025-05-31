@@ -1,8 +1,8 @@
 const newman = require('newman');
 
 newman.run({
-    collection: 'collection/DandysApp_API.json', // Path to the collection
-    environment: 'collection/dandy_env.json', // Path to the environment file
+    collection: 'collection/Dandys_APIs_collection.json', // Path to the collection
+    // environment: 'collection/dandy_env.json', // Path to the environment file
     iterationCount: 1, // Number of iterations
     reporters: ['htmlextra'], // Using htmlextra for better reporting
     reporter: {
